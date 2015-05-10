@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://ivanha.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Ivan HA's Blog
+subtitle: A blog for geek.
+author: Ivan HA
 simple_search: https://www.google.com/search
-description:
+description: 'This is a blog for computer geek. Share about OSX, iOS, Raspberry Pi, Embedded System'
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
