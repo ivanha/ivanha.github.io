@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Raspberry Pi | Ivan]]></title>
   <link href="http://ivanha.github.io/blog/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://ivanha.github.io/"/>
-  <updated>2015-05-17T00:13:59+08:00</updated>
+  <updated>2015-05-17T01:12:51+08:00</updated>
   <id>http://ivanha.github.io/</id>
   <author>
     <name><![CDATA[Ivan HA]]></name>
@@ -18,34 +18,111 @@
     <link href="http://ivanha.github.io/blog/2015/05/16/install-opencv-on-raspberry-pi/"/>
     <updated>2015-05-16T22:44:19+08:00</updated>
     <id>http://ivanha.github.io/blog/2015/05/16/install-opencv-on-raspberry-pi</id>
-    <content type="html"><![CDATA[<p>Installing OpenCV on Raspberry Pi is not as easy as in ordinary computer. While doing my project, I tried many methods and finally found this one from <a href="http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/">Adrian</a> useful.</p>
+    <content type="html"><![CDATA[<p>In my project, I would like to use Raspberry Pi for computer vision with OpenCV, so, the very first step is to install it. But installing OpenCV on Raspberry Pi is not as easy as in ordinary computer. While doing my project, I tried many methods and finally found this one from <a href="http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/">Adrian</a> useful.</p>
 
 <ol>
 <li>Update the Raspberry Pi
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">sudo apt­get update</span>
-</span><span class='line'><span class="go">sudo apt­get upgrade</span>
-</span><span class='line'><span class="go">sudo rpi­update</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt­-get update
+</span><span class='line'>sudo apt­-get upgrade
+</span><span class='line'>sudo rpi­-update
 </span></code></pre></td></tr></table></div></figure></li>
-<li>HIHI
-<figure class='code'><figcaption><span>Javascript Array Syntax <a href="http://j.mp/pPUUmW">http://j.mp/pPUUmW</a> MDN Documentation </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<li>Install the required developer tools and packages
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt­-get install build­-essential cmake pkg­-config
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Install the required image packages to load image files
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install libjpeg8-dev libtiff4-dev libjasper-dev libpng12-dev
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Install GTK library to show OpenCv image on screen
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install libgtk2.0-dev
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Install the required video packages to load video files
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Install optimization libraries for OpenCV
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install libatlas-base-dev gfortran
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Install pip (Python packages manager)
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">arrayLength</span><span class="p">);</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">element0</span><span class="p">,</span> <span class="nx">element1</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">hellip</span><span class="p">;,</span> <span class="nx">elementN</span><span class="p">);</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://bootstrap.pypa.io/get-pip.py&quot;</span>&gt;https://bootstrap.pypa.io/get-pip.py&lt;/a&gt;
+</span><span class='line'>sudo python get-pip.py
 </span></code></pre></td></tr></table></div></figure></li>
-<li>Update the Raspberry Pi
- <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<li>Install virtual environment
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pip install virtualenv virtualenvwrapper
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Update <code>~/.profile</code> with following lines to load environment
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go"> sudo apt­get update</span>
-</span><span class='line'><span class="go"> sudo apt­get upgrade</span>
-</span><span class='line'><span class="go"> sudo rpi­update</span>
-</span><span class='line'><span class="go"> </span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;h1&gt;virtualenv and virtualenvwrapper&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;export <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+</span><span class='line'><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+</span></code></pre></td></tr></table></div></figure></p></li>
+<li>Reload <code>~/.profile</code> file and create a virtual environment named cv
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">source</span> ~/.profile
+</span><span class='line'>mkvirtualenv cv
 </span></code></pre></td></tr></table></div></figure></li>
+<li>Install Python 2.7 development tools and numpy (OpenCV image format)
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install python2.7-dev
+</span><span class='line'>pip install numpy
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Download OpenCV and compile it (need to install <strong>~10</strong> hours)
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>wget -O opencv-2.4.10.zip &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip/download&quot;</span>&gt;http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip/download&lt;/a&gt;
+</span><span class='line'>unzip opencv-2.4.10.zip
+</span><span class='line'><span class="nb">cd </span>opencv-2.4.10
+</span><span class='line'>mkdir build
+</span><span class='line'><span class="nb">cd </span>build
+</span><span class='line'>cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr/local -D <span class="nv">BUILD_NEW_PYTHON_SUPPORT</span><span class="o">=</span>ON -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>ON -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON  -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON ..
+</span><span class='line'>make
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Install OpenCV
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo make install
+</span><span class='line'>sudo ldconfig
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Link OpenCV into Python directory
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">cd</span> ~/.virtualenvs/cv/lib/python2.7/site-packages/
+</span><span class='line'>ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+</span><span class='line'>ln -s /usr/local/lib/python2.7/site-packages/cv.py cv.py
+</span></code></pre></td></tr></table></div></figure></li>
+<li>By this time, your OpenCV should be ready to use in the virtual environment named cv
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>workon cv
+</span></code></pre></td></tr></table></div></figure>
+Test it by running the following command in a Python shell <code>$ python</code>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">&lt;blockquote&gt;&lt;blockquote&gt;&lt;blockquote&gt;&lt;p&gt;import cv2</span>
+</span><span class='line'><span class="go">cv2.&lt;strong&gt;version&lt;/strong&gt;</span>
+</span><span class='line'><span class="go">2.4.10</span>
+</span></code></pre></td></tr></table></div></figure></p></blockquote></blockquote></blockquote></li>
 </ol>
 
 ]]></content>
