@@ -4,7 +4,7 @@
   <title><![CDATA[Ivan]]></title>
   <link href="http://ivanha.github.io/atom.xml" rel="self"/>
   <link href="http://ivanha.github.io/"/>
-  <updated>2015-05-16T22:55:55+08:00</updated>
+  <updated>2015-05-17T00:13:59+08:00</updated>
   <id>http://ivanha.github.io/</id>
   <author>
     <name><![CDATA[Ivan HA]]></name>
@@ -18,7 +18,37 @@
     <link href="http://ivanha.github.io/blog/2015/05/16/install-opencv-on-raspberry-pi/"/>
     <updated>2015-05-16T22:44:19+08:00</updated>
     <id>http://ivanha.github.io/blog/2015/05/16/install-opencv-on-raspberry-pi</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>Installing OpenCV on Raspberry Pi is not as easy as in ordinary computer. While doing my project, I tried many methods and finally found this one from <a href="http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/">Adrian</a> useful.</p>
+
+<ol>
+<li>Update the Raspberry Pi
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">sudo apt­get update</span>
+</span><span class='line'><span class="go">sudo apt­get upgrade</span>
+</span><span class='line'><span class="go">sudo rpi­update</span>
+</span></code></pre></td></tr></table></div></figure></li>
+<li>HIHI
+<figure class='code'><figcaption><span>Javascript Array Syntax</span><a href='http://j.mp/pPUUmW'>MDN Documentation </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'> <span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">arrayLength</span><span class="p">);</span>
+</span><span class='line'> <span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">element0</span><span class="p">,</span> <span class="nx">element1</span><span class="p">,</span> <span class="p">&hellip;,</span> <span class="nx">elementN</span><span class="p">);</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Update the Raspberry Pi
+ <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">    sudo apt­get update</span>
+</span><span class='line'><span class="go">    sudo apt­get upgrade</span>
+</span><span class='line'><span class="go">    sudo rpi­update</span>
+</span><span class='line'><span class="go">    </span>
+</span></code></pre></td></tr></table></div></figure></li>
+</ol>
+
 ]]></content>
   </entry>
   
