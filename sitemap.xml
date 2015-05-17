@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://ivanha.github.io/blog/2015/05/17/how-to-backup-raspberry-pi-as-bootable-image/</loc>
+    <lastmod>2015-05-17T23:29:01+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://ivanha.github.io/blog/2015/05/16/install-opencv-on-raspberry-pi/</loc>
     <lastmod>2015-05-16T22:44:19+08:00</lastmod>
   </url>
   <url>
-    <loc>http://ivanha.github.io/blog/</loc>
+    <loc>http://ivanha.github.io/archives/</loc>
   </url>
   <url>
-    <loc>http://ivanha.github.io/archives/</loc>
+    <loc>http://ivanha.github.io/blog/</loc>
   </url>
   <url>
     <loc>http://ivanha.github.io/</loc>

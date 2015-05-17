@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Raspberry Pi | Ivan]]></title>
   <link href="http://ivanha.github.io/blog/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://ivanha.github.io/"/>
-  <updated>2015-05-17T03:16:19+08:00</updated>
+  <updated>2015-05-18T00:15:49+08:00</updated>
   <id>http://ivanha.github.io/</id>
   <author>
     <name><![CDATA[Ivan HA]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Backup Raspberry Pi as Bootable Image]]></title>
+    <link href="http://ivanha.github.io/blog/2015/05/17/how-to-backup-raspberry-pi-as-bootable-image/"/>
+    <updated>2015-05-17T23:29:01+08:00</updated>
+    <id>http://ivanha.github.io/blog/2015/05/17/how-to-backup-raspberry-pi-as-bootable-image</id>
+    <content type="html"><![CDATA[<p>Although installing Raspberry Pi with <a href="https://www.raspberrypi.org/help/noobs-setup/">NOOBS</a> is pretty easy, it was still painful to install a new OS if your project has already carry out for a while. You may probably using some version control method like Git to backup your code, but it would be better if you have a bootable image to backup also your working environment.</p>
+
+<p>Originally I try to do so using Disk Utility in my Mac but I don&rsquo;t know why the image fail to boot on the Raspberry Pi. After that, I try using Mac Terminal with the very raw <code>dd</code> command. Here is how I do the backup.</p>
+
+<p><strong>Step 1</strong>: Plug your Raspberry Pi SD card into your Mac.</p>
+
+<p><strong>Step 2</strong>: Open up a Terminal and enter command <code>diskutil list</code>. Then, you would see a screen like this.
+<img src="/images/2015-05-17-how-to-backup-raspberry-pi-as-bootable-image/diskutil-list.jpg" alt="" /><br/>
+The disk with label <code>/dev/disk1</code> is the SD card.</p>
+
+<p><strong>Step 3</strong>: Unmount the card, <code>diskutil unmountDisk /dev/disk1</code></p>
+
+<p><strong>Step 4</strong>: Backup as a gzip file<br/>
+<code>sudo dd if=/dev/rdisk1 bs=10m | gzip &gt; ~/pi.gz</code><br/>
+<code>dd</code> is the disk duplicate command<br/>
+<code>if</code> stands for input file, so point to the SD card<br/>
+<code>/dev/rdisk1</code> is the raw image storage of <code>/dev/disk1</code>, to speed up the backup process<br/>
+<code>bs</code> is the block size, the read and write bytes size at a time, <code>10m</code> stands for 10MB<br/>
+<code>| gzip &gt; ~/pi.gz</code> is pipe to the <code>gzip</code> utility, and zip to a file named <code>pi.gz</code> in your Home directory<br/>
+The Terminal will freeze for a while and after that you will see the <code>pi.gz</code> in your Home directory.</p>
+
+<p><strong>Step 5</strong>: Restore the gzip file to SD card<br/>
+<code>gzip -dc ~/pi.gz | sudo dd of=/dev/rdisk1 bs=10m</code><br/>
+It&rsquo;s just a reverse of Step 4, and again your Terminal will freeze for a while and after that you can use it to boot on your Raspberry Pi.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Install OpenCV on Raspberry Pi]]></title>
