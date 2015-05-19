@@ -4,7 +4,7 @@
   <title><![CDATA[Ivan]]></title>
   <link href="http://ivanha.github.io/atom.xml" rel="self"/>
   <link href="http://ivanha.github.io/"/>
-  <updated>2015-05-19T16:35:34+08:00</updated>
+  <updated>2015-05-19T16:43:37+08:00</updated>
   <id>http://ivanha.github.io/</id>
   <author>
     <name><![CDATA[Ivan HA]]></name>
@@ -44,6 +44,15 @@
 </span><span class='line'><span class="nv">Name</span><span class="o">=</span>TightVNC
 </span><span class='line'><span class="nv">Exec</span><span class="o">=</span>vncserver :1
 </span><span class='line'><span class="nv">StartupNotify</span><span class="o">=</span><span class="nb">false</span>
+</span></code></pre></td></tr></table></div></figure></li>
+<li>Set the VNC Password
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>vncserver :1
+</span></code></pre></td></tr></table></div></figure>
+You will be asked to input a password for your VNC server, following the instruction on screen.</li>
+<li>Reboot your Raspberry Pi
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo reboot
 </span></code></pre></td></tr></table></div></figure></li>
 <li>Now, you can access it through VNC client on your computer</li>
 </ol>
