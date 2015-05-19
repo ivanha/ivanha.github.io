@@ -4,7 +4,7 @@
   <title><![CDATA[Category: How-to | Ivan]]></title>
   <link href="http://ivanha.github.io/blog/categories/how-to/atom.xml" rel="self"/>
   <link href="http://ivanha.github.io/"/>
-  <updated>2015-05-19T16:43:37+08:00</updated>
+  <updated>2015-05-19T16:52:04+08:00</updated>
   <id>http://ivanha.github.io/</id>
   <author>
     <name><![CDATA[Ivan HA]]></name>
@@ -54,7 +54,8 @@ You will be asked to input a password for your VNC server, following the instruc
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo reboot
 </span></code></pre></td></tr></table></div></figure></li>
-<li>Now, you can access it through VNC client on your computer</li>
+<li>Now, you can access it through VNC client on your computer<br/>
+<img src="/images/2015-05-19-how-to-install-vnc-server-on-raspberry-pi/VNC-client.jpg" alt="" /></li>
 </ol>
 
 ]]></content>
